@@ -54,6 +54,9 @@ func main() {
 	books = append(books, Book{ID: "1", Isbn: "554566", Title: "Smallest Book Ever", Author: &Author{
 		FirstName: "Jane", LastName: "Doe"}})
 
+	books = append(books, Book{ID: "2", Isbn: "123456", Title: "Jazz Etudes for Tenor Sax", Author: &Author{
+		FirstName: "Tyree", LastName: "Barron"}})
+
 	router.HandleFunc("/api/books", getBooks).Methods("GET")
 	router.HandleFunc("/api/books/{id}", getBook).Methods("GET")
 	router.HandleFunc("/api/books", createBook).Methods("POST")
