@@ -1,29 +1,17 @@
 package main
 
 import (
+	
 	"encoding/json"
 	"log"
 	"net/http"
-
 	"github.com/gorilla/mux"
 )
-
-// Book Struct (Model)
-type Book struct {
-	ID     string  `json:"id"`
-	Isbn   string  `json:"isbn"`
-	Title  string  `json:"title"`
-	Author *Author `json:"author"`
-}
 
 // Init books as a slice book Struct
 var books []Book
 
-// Author Struct
-type Author struct {
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-}
+
 
 func getBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
